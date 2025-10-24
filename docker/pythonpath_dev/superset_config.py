@@ -105,11 +105,60 @@ class CeleryConfig:
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True,
-                 "PUBLIC_DASHBOARDS": True,
-                 "EMBEDDED_SUPERSET": True,
-                 "DASHBOARD_RBAC": True}
-
+FEATURE_FLAGS = {
+                # Включение системы алертов и отчетов
+                "ALERT_REPORTS": True,
+                
+                # Публичные дашборды (доступ без авторизации)
+                "PUBLIC_DASHBOARDS": True,
+                
+                # Встраивание дашбордов в другие приложения (iframe)
+                "EMBEDDED_SUPERSET": True,
+                
+                # Ролевая модель доступа для дашбордов (Role-Based Access Control)
+                "DASHBOARD_RBAC": True,
+                
+                # Виртуализация дашбордов (расширенные возможности компоновки)
+                "DASHBOARD_VIRTUALIZATION": True,
+                
+                # Включение обработки Jinja шаблонов в SQL запросах
+                "ENABLE_TEMPLATE_PROCESSING": True,
+                
+                # Экранирование HTML в Markdown (безопасность)
+                "ESCAPE_MARKDOWN_HTML": True,
+                
+                # Вид карточек по умолчанию в списках
+                "LISTVIEWS_DEFAULT_CARD_VIEW": True,
+                
+                # Генерация превью (миниатюр) для дашбордов
+                "THUMBNAILS": True,
+                
+                # Функциональность Drill-by (углубленный анализ данных)
+                "DRILL_BY": True,
+                
+                # Детализация данных (переход к деталям)
+                "DRILL_TO_DETAIL": True,
+                
+                # Горизонтальная панель фильтров в дашбордах
+                "HORIZONTAL_FILTER_BAR": True,
+                
+                # Оценка стоимости запросов (анализ производительности)
+                "ESTIMATE_QUERY_COST": True,
+                
+                # Система тегирования для дашбордов и чартов
+                "TAGGING_SYSTEM": True,
+                
+                # Отключение HTML санитизации (осторожно - может быть уязвимостью!)
+                "HTML_SANITIZATION": False,
+                }
+                
+# Добавление русского языка в список доступных языков
+LANGUAGES = {
+    "ru": {"flag": "ru", "name": "Русский"},
+    "en": {"flag": "us", "name": "English"}    
+}
+# Установка русского языка в качестве языка по умолчанию
+BABEL_DEFAULT_LOCALE = "ru"
 TALISMAN_ENABLED = False
 
 HTTP_HEADERS = {
